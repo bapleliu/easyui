@@ -23,9 +23,9 @@
 		<tr>
 			<td width="100px" align="right">机构：</td>
 			<td width="150px" align="left" valign="top" style="padding-top:4px">
-				<jsp:include page="./tree01.jsp">
+				<jsp:include page="./org.jsp">
 					<jsp:param name="url" value="tree/js/tree_data.json"/>
-					<jsp:param name="checkbox" value="true"/>
+					<jsp:param name="checkbox" value="false"/>
 					<jsp:param name="onlyLeafCheck" value="false"/>
 					<jsp:param name="url" value="tree/js/tree_data.json"/>
 				</jsp:include>
@@ -33,7 +33,7 @@
 			<td width="100px" align="right">姓名：</td>
 			<td><input type="text"/></td>
 			<td>
-				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="getOrg()">获取选中</a>
+				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="alert(getOrg())">获取选中</a>
 			</td>
 		</tr>
 	</table>

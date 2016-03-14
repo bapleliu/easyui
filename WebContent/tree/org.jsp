@@ -16,17 +16,21 @@ $(function(){
 	});
 });
 function getOrg(){
-	var nodes = $('#tt').tree('getChecked');
-    var s = '';
-    var ids = '';
-    for(var i=0; i<nodes.length; i++){
-        if (ids != '') {
-        	s += ',';
-        	ids += ",";
+	var ids = '';
+	if($("#tt").tree("options").checkbox){//复选框模式
+		var nodes = $('#tt').tree('getChecked');
+	    for(var i=0; nodes && i<nodes.length; i++){
+	        if (ids != '') {
+	        	ids += ",";
+	        }
+	        ids += nodes[i].id;
+	    }
+	}else{
+		var node = $('#tt').tree('getSelected');
+		if (node){
+            ids = node.id;
         }
-        s += nodes[i].text;
-        ids += nodes[i].id;
-    }
-    alert("ids=" + ids + "\ntext=" + s);
+	}
+	return ids;
 }
 </script>
