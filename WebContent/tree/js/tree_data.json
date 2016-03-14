@@ -1,0 +1,30 @@
+[{
+    "id": 0,
+    "text": "Node 0",
+    "state": "closed",
+    "children":[{
+		    "id": 1,
+		    "text": "Node 1",
+		    "state": "closed",
+		    "children": [{
+		        "id": 11,
+		        "text": "Node 11"
+		    },{
+		        "id": 12,
+		        "text": "Node 12",
+		        "checked":true
+		    }]
+		},{
+		    "id": 2,
+		    "text": "Node 2",
+		    "state": "open",
+		    "children": [{
+		        "id": 21,
+		        "text": "Node 11"
+		    },{
+		        "id": 22,
+		        "text": "Node 12",
+		        "checked":true
+		    }]
+		}]
+}]

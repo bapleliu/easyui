@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Accordion - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="./jquery-easyui-1.4.3\themes\bootstrap/easyui.css">
+	<link rel="stylesheet" type="text/css" href="./jquery-easyui-1.4.3/themes/default/icon.css">
+	<link rel="stylesheet" type="text/css" href="./jquery-easyui-1.4.3/demo/demo.css">
+	<script type="text/javascript" src="./jquery-easyui-1.4.3/jquery.min.js"></script>
+	<script type="text/javascript" src="./jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+	<style>
+	.secMenu{
+		width:100%;
+		background:#E0ECFF;
+		margin-top:1px;
+		margin-bottom:1px;
+		height:30px;
+		line-height:30px;
+		text-indent:2em;
+	}
+	.secMenu:hover{
+		background:#EAF2FF;
+	}
+	.thirdMenu{
+		text-indent:4em;
+	}
+	</style>
+</head>
+<body>
+	<div style="margin:20px 0 10px 0;"></div>
+	<div class="easyui-accordion" style="width:250px;height:600px;">
+		<div title="火影忍者" data-options="iconCls:'icon-ok'" style="overflow:auto;">
+			<div class="secMenu">大蛇丸</div>
+			<div class="secMenu">再不斩</div>
+			<div class="secMenu">长十郎</div>
+			<div class="secMenu">鬼灯满月</div>
+			
+			<div class="easyui-accordion" style="border:none">
+				<div title="火之国" data-options="selected:false" style="overflow:auto;">
+					<div class="secMenu thirdMenu">歹徒</div>
+					<div class="secMenu thirdMenu">斑</div>
+					<div class="secMenu thirdMenu">水门</div>
+					<div class="secMenu thirdMenu">止水</div>
+					<div class="secMenu thirdMenu">自来也</div>
+				</div>
+				<div title="阴人" data-options="selected:true" style="overflow:auto;">
+					<div class="secMenu thirdMenu">药师</div>
+					<div class="secMenu thirdMenu">左近</div>
+					<div class="secMenu thirdMenu">右劲</div>
+				</div>
+			</div>
+						
+			<div class="secMenu">千代</div>
+			<div class="secMenu">手鞠</div>
+			<div class="secMenu">夜叉鸦</div>
+			<!--
+			<div class="secMenu">木子</div>
+			-->
+		</div>
+		<div title="呵呵1" data-options="iconCls:'icon-help'" style="padding:10px;">
+			<div class="secMenu">勘九郎</div>
+		</div>
+		<div title="呵呵2" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+			<div class="secMenu">小樱</div>
+		</div>
+		<div title="呵呵3" data-options="iconCls:'icon-help'" style="padding:10px;">
+		<div class="secMenu">纲手</div>
+		</div>
+	</div>
+</body>
+</html>
