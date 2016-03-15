@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css">
 	<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript" src="messager/js/messager.js"></script>
 </head>
 <script>
@@ -49,6 +50,9 @@ function prompt(){
 }
 </script>
 <body>
+<div class="easyui-panel" title="要点" style="margin-bottom:10px">
+1.将easyui提示信息改成中文：引入easyui-lang-zh_CN.js，并且该js必须在jquery.easyui.min.js的后面。
+</div>
 <a href="javascript:void(0);" class="easyui-linkbutton" onClick="javascript:showTips('内容6s后消失','自定义标题',6000);">右下角提示</a><br><br>
 <a href="javascript:void(0);" class="easyui-linkbutton" onClick="javascript:showTips('只有内容');">右下角提示</a>
 <hr/>

@@ -37,3 +37,6 @@
 * alert
 * confirm
 * prompt
+
+要点：
+* 实现中文提示，将easyui提示信息改成中文：引入easyui-lang-zh_CN.js，并且该js必须在jquery.easyui.min.js的后面。
