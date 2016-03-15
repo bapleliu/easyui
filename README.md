@@ -29,3 +29,11 @@
 目录：/window
 实现功能点：
 * 弹出关闭window。
+
+###messager学习
+目录：/messager
+实现功能点：
+* 右下角提示（提取公共方法）。
+* alert
+* confirm
+* prompt
