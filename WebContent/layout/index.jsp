@@ -20,19 +20,21 @@
 $(function(){
 	
 });
-function loadCenter(){
-	alert(1);
-	console.log($('#centerDiv').layout("options"));
-	//alert($('#centerDiv').panel("options").href);
-	$('#centerDiv').panel("href","test.html");
-	$('#centerDiv').layout("option",'test.html');
-	//$("#centerDiv").href="test.html";
+function loadCenter(url){
+	var center = $("body").layout('panel','center');//获取center的panel
+	center.panel('refresh',url);//更新panel的href
+}
+function getIdValue(id){
+	console.log($("#"+id).val());
 }
 </script>
 <body class="easyui-layout">
     <div data-options="region:'north'" style="height:50px">logo</div>
     <div data-options="region:'west'" title="菜单" style="width:150px;">
-    	<a href="javascript:void(0)" onclick="loadCenter()">加载</a>
+    	<a href="javascript:void(0)" onclick="loadCenter('test1.html')">加载页面1</a><br><br>
+    	<a href="javascript:void(0)" onclick="loadCenter('test2.html')">加载页面2</a><br><br>
+    	<a href="javascript:void(0)" onclick="getIdValue('id1')">获取id1</a><br><br>
+    	<a href="javascript:void(0)" onclick="getIdValue('id2')">获取id2</a><br><br>
     </div>
     <div data-options="region:'east'" style="width:100px;"></div>
     <div id="centerDiv" data-options="region:'center'"></div>
