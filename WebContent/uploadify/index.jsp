@@ -15,10 +15,11 @@
 	<link rel="stylesheet" type="text/css" href="uploadify/uploadify/uploadify.css" />
 </head>
 <script>
+var fileUp;
 $(function(){
 	$(function() {
 		$(function() {
-		    $('#file_upload').uploadify({
+		fileUp=$('#file_upload').uploadify({
 		    	'uploader' : '<%=basePath%>/UploadServlet',//服务端地址
 		        'swf'      : 'uploadify/uploadify/uploadify.swf',
 		        'buttonImage' : 'uploadify/uploadify/img/chooseFile.jpg',//重载按钮图片
@@ -69,6 +70,10 @@ function destroy(){
 	alert("取消upload上传，变成原来样式！");
 	$('#file_upload').uploadify('destroy');//destory
 }
+function getCount(){
+	var queueFils = $("#file_queue").children(".uploadify-queue-item");
+	alert("队列中共有"+queueFils.length+"个文件！");
+}
 </script>
 <body>
 	<div class="easyui-panel" title="说明" style="margin-bottom:15px">
@@ -77,6 +82,7 @@ function destroy(){
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="upload()">开始上传</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="cancel()">取消上传</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="destroy()">destroy</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="getCount()">获取上传队列中的文件个数</a>
 		<input type="file" name="file_upload" id="file_upload" />
 		<div id="file_queue" style="width:400px;height:10px;position:absolute;z-index:999"></div>
 	</div>
