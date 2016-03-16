@@ -32,11 +32,15 @@ $(function(){
 		        'auto':false,//自动提交
 		        'fileTypeExts' : '*.gif; *.jpg; *.png',//文件类型
 		        'fileTypeDesc' : '只能上传图片',//选择文件的时候的提示信息
-		        'multi'    : false,//多选
-		        'queueSizeLimit' : 1,//队列中文件的个数
+		        'multi'    : true,//多选
+		        'queueSizeLimit' : 3,//队列中文件的个数
 	        	'onSelect' : function(file) {
 	        		console.log(file);
 	                alert("选择文件：" + file.name + "\n类型="+file.type+"\n大小="+file.size);
+	                if(file.size>1024000){//文件太大，取消上传该文件
+	                	alert("文件大小超过限制！");
+	                	$('#file_upload').uploadify('cancel',file.id);
+	                }
 	            },
 	            'onUploadSuccess' : function(file, data, response) {
 	                alert('每个文件上传成功后触发 ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);

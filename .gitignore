@@ -1,4 +1,4 @@
 .settings
 .classpath
-*/classes/*
+WebContent/WEB-INF/classes/*
 .project
