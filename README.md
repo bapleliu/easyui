@@ -40,3 +40,26 @@
 
 要点：
 * 实现中文提示，将easyui提示信息改成中文：引入easyui-lang-zh_CN.js，并且该js必须在jquery.easyui.min.js的后面。
+
+###uploadify学习
+目录：/uploadify
+实现功能点：
+* 使用uploadify插件上传文件。
+
+要点：
+* 服务端需要jar包：
+	* `/EasyUiLearn/WebContent/WEB-INF/lib/commons-fileupload-1.3.1.jar`
+	* `/EasyUiLearn/WebContent/WEB-INF/lib/commons-io-2.2.jar`
+
+###Java解析Excel公共类
+路径：`src/com/excel/utils/AnalyseExcelUtil.java`
+实现功能点：
+* 只需要excel的路径和需要解析的sheet页的个数，便能将excel的内容解析到一个map对象中。
+* 调用方法`new AnalyseExcelUtil().excel2Obj(result, filePath,0);`，result是解析后的结果，filePath是excel的实际路径，0是解析sheet页的个数（**0代表全部解析，其他数字代表解析的具体个数**）
+要点：
+* 需要jar包：
+	* `/EasyUiLearn/WebContent/WEB-INF/lib/dom4j-1.6.1.jar`
+	* `/EasyUiLearn/WebContent/WEB-INF/lib/poi-3.8.jar`
+	* `/EasyUiLearn/WebContent/WEB-INF/lib/poi-ooxml-3.8.jar`
+	* `/EasyUiLearn/WebContent/WEB-INF/lib/poi-ooxml-schemas-3.8.jar`
+	* `/EasyUiLearn/WebContent/WEB-INF/lib/xmlbeans-2.3.0.jar`
