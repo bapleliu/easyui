@@ -47,6 +47,18 @@
 **要点：**
 * 实现中文提示，将easyui提示信息改成中文：引入easyui-lang-zh_CN.js，并且该js必须在jquery.easyui.min.js的后面。
 
+
+###accordion手风琴菜单
+**目录：**/accordion
+**实现功能点：**
+* 菜单，带子菜单。
+* 点击测试菜单初始化通过js解析json动态生成菜单。
+
+**要点：**
+* 菜单由两部分构成。外面是accordion的手风琴样式，里面是menubutton。
+
+
+
 ###uploadify学习
 **目录：**/uploadify
 
@@ -72,3 +84,5 @@
 	* `/EasyUiLearn/WebContent/WEB-INF/lib/poi-ooxml-3.8.jar`
 	* `/EasyUiLearn/WebContent/WEB-INF/lib/poi-ooxml-schemas-3.8.jar`
 	* `/EasyUiLearn/WebContent/WEB-INF/lib/xmlbeans-2.3.0.jar`
+
+
