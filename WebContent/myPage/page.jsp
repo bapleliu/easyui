@@ -17,11 +17,11 @@ function query(queryPage){
 <button onclick="query()">查询</button>
 <div>
 用js实现的一个翻页。<br/>
-主要使用场景：table中的数据通过ajax查询，查询完毕之后调用js生成翻页控件。<br/>
-<code>
+使用场景：table中的数据通过ajax查询，查询完毕之后调用js生成翻页控件。<br/>
+<pre>
 displayPage('#pageDiv','goPage','query',10,1,100);
-</code>
-<br/>
+</pre>
 </div>
+<br/>
 <div id="pageDiv"></div>
 </body>
