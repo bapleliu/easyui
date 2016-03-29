@@ -15,10 +15,11 @@
 	<link rel="stylesheet" type="text/css" href="uploadify/uploadify/uploadify.css" />
 </head>
 <script>
+var fileUp;
 $(function(){
 	$(function() {
 		$(function() {
-		    $('#file_upload').uploadify({
+		fileUp=$('#file_upload').uploadify({
 		    	'uploader' : '<%=basePath%>/UploadServlet',//服务端地址
 		        'swf'      : 'uploadify/uploadify/uploadify.swf',
 		        'buttonImage' : 'uploadify/uploadify/img/chooseFile.jpg',//重载按钮图片
@@ -32,11 +33,15 @@ $(function(){
 		        'auto':false,//自动提交
 		        'fileTypeExts' : '*.gif; *.jpg; *.png',//文件类型
 		        'fileTypeDesc' : '只能上传图片',//选择文件的时候的提示信息
-		        'multi'    : false,//多选
-		        'queueSizeLimit' : 1,//队列中文件的个数
+		        'multi'    : true,//多选
+		        'queueSizeLimit' : 3,//队列中文件的个数
 	        	'onSelect' : function(file) {
 	        		console.log(file);
 	                alert("选择文件：" + file.name + "\n类型="+file.type+"\n大小="+file.size);
+	                if(file.size>1024000){//文件太大，取消上传该文件
+	                	alert("文件大小超过限制！");
+	                	$('#file_upload').uploadify('cancel',file.id);
+	                }
 	            },
 	            'onUploadSuccess' : function(file, data, response) {
 	                alert('每个文件上传成功后触发 ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
@@ -65,6 +70,10 @@ function destroy(){
 	alert("取消upload上传，变成原来样式！");
 	$('#file_upload').uploadify('destroy');//destory
 }
+function getCount(){
+	var queueFils = $("#file_queue").children(".uploadify-queue-item");
+	alert("队列中共有"+queueFils.length+"个文件！");
+}
 </script>
 <body>
 	<div class="easyui-panel" title="说明" style="margin-bottom:15px">
@@ -73,6 +82,7 @@ function destroy(){
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="upload()">开始上传</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="cancel()">取消上传</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="destroy()">destroy</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="getCount()">获取上传队列中的文件个数</a>
 		<input type="file" name="file_upload" id="file_upload" />
 		<div id="file_queue" style="width:400px;height:10px;position:absolute;z-index:999"></div>
 	</div>

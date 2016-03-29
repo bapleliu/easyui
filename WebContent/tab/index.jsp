@@ -36,7 +36,7 @@ function add(){
 	$('#tt').tabs('add',{
 	    title:title,
 	    //content:'Tab Body',//tab页的内容
-	    href:"test.html",//tab页的内容来自一个引入的页面。
+	    href:"test1.html",//tab页的内容来自一个引入的页面。
 	    closable:true,
 	    tools:[{
 	        iconCls:'icon-mini-refresh',

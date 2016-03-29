@@ -1,3 +1,8 @@
 .settings
 .classpath
+<<<<<<< HEAD
 /classes/*
+=======
+WebContent/WEB-INF/classes/*
+.project
+>>>>>>> 137ab9ba90ebdbc3a24866562c7aeac22920af8e
