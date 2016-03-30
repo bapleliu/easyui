@@ -33,7 +33,7 @@ var setting = {
 	check:{
 		enable: true,
 		chkStyle: "checkbox",
-		chkboxType: { "Y": "p", "N": "s" }
+		chkboxType: { "Y" : "s", "N" : "ps" }
 	},
 	callback: {
 		onClick: zTreeOnClick
