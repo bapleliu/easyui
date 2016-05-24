@@ -62,6 +62,22 @@ function closeTab(){
 	var index = $('#tt').tabs('getTabIndex',tab);
 	$("#tt").tabs("close",index);
 }
+function add100(){
+	for(var i=0;i<100;i++){
+		$('#tt').tabs('add',{
+		    title:"页面" + i,
+		    //content:'Tab Body',//tab页的内容
+		    href:"test1.html",//tab页的内容来自一个引入的页面。
+		    closable:true,
+		    tools:[{
+		        iconCls:'icon-mini-refresh',
+		        handler:function(){
+		            alert('refresh');
+		        }
+		    }]
+		});
+	}
+}
 </script>
 <body>
 	<div class="easyui-panel" title="说明" style="margin-bottom:15px">
@@ -73,6 +89,7 @@ function closeTab(){
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="add()">新建</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="getTab()">获取选中tab</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeTab()">关闭选中tab</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="add100()">生成100个</a>
 	</div>
 	<div id="tt"></div>
 </body>
