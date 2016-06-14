@@ -1,12 +1,15 @@
 package com.excel.utils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
@@ -14,12 +17,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-/**
- * ClassName: AnalyseExcelUtil 
- * @Description:解析excel工具类 
- * @author Panyk
- * @date 2016年3月16日
- */
+
 public class AnalyseExcelUtil {
 	private Workbook wb = null;
 	private File fileDir = null;
@@ -119,7 +117,7 @@ public class AnalyseExcelUtil {
 	 * @return
 	 */
 	public void readExcel2ObjsByPath(Map<String, Object> result, File file) throws Exception{
-		wb = WorkbookFactory.create(file);
+		wb = WorkbookFactory.create(new FileInputStream(file));
 		handlerExcel2Objs(result, wb);
 	}
 
@@ -179,6 +177,10 @@ public class AnalyseExcelUtil {
 											value = format.format(date);
 										} else {// 纯数字
 											value = String.valueOf(cell.getNumericCellValue());
+											if(value.contains("E")){//将科学计数法的数字转成正常字符串
+												DecimalFormat df = new DecimalFormat("0");  
+												value = df.format(cell.getNumericCellValue());  
+											}
 											/*
 											// 解决1234.0 去掉后面的.0
 											if (null != value && !"".equals(value.trim())) {
