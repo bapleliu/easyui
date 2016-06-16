@@ -22,6 +22,20 @@ $(function(){
 	    }
 	});
 });
+function change(){
+	/*	
+	var tab = $('#tt').tabs('getTab',0);  // 取得第一个tab
+    $('#tt').tabs('update', {
+        tab: tab,
+        options: {
+            title: 'New Title'
+        }
+    });
+    */
+	/*获取title*/
+	console.log( $('#tt').tabs('getTab',0).panel('options').title );
+    console.log( $("#tt").tabs("tabs")[0].panel('options').title );
+}
 function add(){
 	var title = "页面" + (Math.random()*10).toFixed(0);
 	//遍历所有的tab，如果该tab已经存在，那么打开到该页，否则新建tab页。
@@ -63,7 +77,7 @@ function closeTab(){
 	$("#tt").tabs("close",index);
 }
 function add100(){
-	for(var i=0;i<100;i++){
+	for(var i=0;i<50;i++){
 		$('#tt').tabs('add',{
 		    title:"页面" + i,
 		    //content:'Tab Body',//tab页的内容
@@ -90,6 +104,7 @@ function add100(){
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="getTab()">获取选中tab</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeTab()">关闭选中tab</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="add100()">生成100个</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="change()">更改title</a>
 	</div>
 	<div id="tt"></div>
 </body>
