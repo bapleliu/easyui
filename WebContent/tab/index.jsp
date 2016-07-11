@@ -48,6 +48,7 @@ function add(){
 	}
 	//该tab页不存在，那么新增
 	$('#tt').tabs('add',{
+		id:title,
 	    title:title,
 	    //content:'Tab Body',//tab页的内容
 	    href:"test1.html",//tab页的内容来自一个引入的页面。
@@ -69,6 +70,7 @@ function getTab(){
 	}else{
 		var title = tab.panel('options').title;
 		alert(title);
+		alert("id="+tab.panel('options').id);
 	}
 }
 function closeTab(){
