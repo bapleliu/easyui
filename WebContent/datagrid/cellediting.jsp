@@ -18,7 +18,7 @@
 	<p>Click a cell to start editing.</p>
 	<div style="margin:20px 0;"></div>
 	
-	<table id="dg" title="Cell Editing in DataGrid" style="width:700px;height:auto"
+	<table id="dg" title="Cell Editing in DataGrid" style="width:1000px;height:auto"
 			data-options="
 				iconCls: 'icon-edit',
 				singleSelect: true,
@@ -29,9 +29,10 @@
 			<tr>
 				<th data-options="field:'itemid',width:80">Item ID</th>
 				<th data-options="field:'productid',width:100,editor:'text'">Product</th>
-				<th data-options="field:'listprice',width:80,align:'right',editor:{type:'text',options:{precision:1,validType:'email'}}">List Price</th>
+				<th data-options="field:'listprice',width:80,align:'right',editor:{type:'text',options:{precision:1,validType:'minLength[5]'}}">List Price</th>
 				<th data-options="field:'unitcost',width:80,align:'right',editor:'numberbox'">Unit Cost</th>
 				<th data-options="field:'attr1',width:250,editor:'text'">Attribute</th>
+				<th data-options="field:'date',width:250,editor:{type:'datetimebox',options:{editable:false}}">日期</th>
 				<th data-options="field:'status',width:60,align:'center',editor:{type:'checkbox',options:{on:'P',off:''}}">Status</th>
 			</tr>
 		</thead>
